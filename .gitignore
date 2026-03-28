@@ -1,4 +1,4 @@
-_site/
-**/.DS_Store/
-**/.DS_Store
-**/tmp
+.DS_Store
+Thumbs.db
+*.log
+node_modules/

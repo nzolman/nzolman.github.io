@@ -1,31 +1,156 @@
-A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+# nzolman.github.io
 
-I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
+Personal academic website. Built with plain HTML, CSS, and JavaScript — no build step, no framework, no dependencies. Just push to GitHub and it's live.
 
-### Note: if you are using this repo and now get a notification about a security vulnerability, delete the Gemfile.lock file. 
+---
 
-# Instructions
+## Quick-start: how to update things
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+### Change your name, bio, links, or CV
 
-See more info at https://academicpages.github.io/
+Open **`js/site.config.js`** and edit the fields there. Everything is annotated. This is the only file you need to touch for personal info.
 
-## To run locally (not on GitHub Pages, to serve on your own computer)
+### Add a news item
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+Open **`content/news.md`** and add a new entry at the top:
 
-# Changelog -- bugfixes and enhancements
+```markdown
+## 2025-07-01
+📄 New paper accepted at ICML 2025 — "[Title](https://arxiv.org/...)."
+```
 
-There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
+The date must be in `YYYY-MM-DD` format. Items are sorted newest-first automatically.
 
-To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+### Add a research project
+
+1. Create a new file in **`content/projects/`**, e.g. `my-new-project.md`:
+
+```markdown
+# My Project Title
+
+---
+title:  My Project Title
+date:   2025-06-15
+tags:   Tag One, Tag Two
+image:  assets/projects/my-project.png
+video:  ""
+demo:   https://my-demo.com
+paper:  https://arxiv.org/abs/xxxx.xxxxx
+code:   https://github.com/nzolman/my-project
+---
+
+Project description in **Markdown**. Keep it 2–4 sentences.
+
+**Key contributions:**
+- Contribution one
+- Contribution two
+```
+
+2. Add the filename to **`content/projects/index.json`**:
+
+```json
+[
+  "my-new-project.md",
+  "hamiltonian-autoencoders.md",
+  "operator-learning.md"
+]
+```
+
+That's it. The site will pick it up automatically.
+
+#### Media options
+
+| Field   | What to put                                    | Effect                              |
+|---------|------------------------------------------------|-------------------------------------|
+| `image` | Path like `assets/projects/img.png` or a URL  | Thumbnail on card; click to enlarge |
+| `video` | YouTube URL, Vimeo URL, or local `.mp4` path   | Click thumbnail to play in modal    |
+| `demo`  | Any URL                                        | Button opens in new tab             |
+| `paper` | arXiv / journal URL                            | "Paper" button                      |
+| `code`  | GitHub URL                                     | "Code" button                       |
+
+Leave any field as `""` or omit it to hide that element.
+
+### Add your CV
+
+Drop your PDF into the **`cv/`** folder and update `cvFile` in `site.config.js`:
+
+```js
+cvFile: "cv/cv.pdf",
+```
+
+### Add a profile photo
+
+Drop your photo into **`assets/`** and update `profilePhoto` in `site.config.js`:
+
+```js
+profilePhoto: "assets/profile.png",
+```
+
+### Add a project image
+
+Drop images into **`assets/projects/`** and reference them in your project `.md` files:
+
+```markdown
+image: assets/projects/my-project.png
+```
+
+---
+
+## File structure
+
+```
+nzolman.github.io/
+├── index.html                  ← Site HTML (rarely needs editing)
+├── css/
+│   └── style.css               ← All styles; CSS variables at top for theming
+├── js/
+│   ├── site.config.js          ← ★ YOUR PERSONAL INFO LIVES HERE ★
+│   └── site.js                 ← Site engine (Markdown parsing, rendering)
+├── content/
+│   ├── news.md                 ← ★ ADD NEWS ITEMS HERE ★
+│   └── projects/
+│       ├── index.json          ← List of project .md files to load
+│       ├── hamiltonian-autoencoders.md
+│       └── operator-learning.md
+├── assets/
+│   ├── profile.png             ← Your profile photo
+│   └── projects/               ← Project images go here
+├── cv/
+│   └── cv.pdf                  ← Your CV
+└── README.md
+```
+
+---
+
+## Theming
+
+Open `css/style.css` and find the `:root` block near the top. The main accent color is `--accent`; change it to retheme the entire site. Font choices are also there.
+
+---
+
+## Deployment
+
+This site is designed for **GitHub Pages** with no build step:
+
+1. Push everything to the `main` branch of `<username>.github.io`
+2. In repo Settings → Pages → set Source to `main` / `/ (root)`
+3. Done — live at `https://<username>.github.io`
+
+---
+
+## Adding sections
+
+To add a new section (e.g. Teaching, Publications):
+
+1. Add a `<section>` in `index.html` inside `<main>`:
+
+```html
+<section id="teaching">
+  <h2 class="section-heading">Teaching</h2>
+  <div id="teaching-content">
+    <!-- write HTML directly, or load from a .md file in site.js -->
+  </div>
+</section>
+```
+
+2. Either write the content as HTML directly, or load it dynamically from a Markdown file using the same pattern as news/projects in `site.js`.

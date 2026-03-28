@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  INDEX.HTML — Site entry point
+  ============================================================
+
+  You should not need to edit this file often.
+  To update content:
+    • Personal info, links, bio  →  js/site.config.js
+    • News items                 →  content/news.md
+    • Research projects          →  content/projects/*.md
+                                    + content/projects/index.json
+    • CV                         →  drop PDF into cv/ and set
+                                    cvFile in site.config.js
+
+  To add a new section:
+    1. Add a <section> inside <main> with an id and heading
+    2. Add the corresponding JS rendering in site.js (if dynamic)
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content=""><!-- filled by site.js -->
+
+  <title>Nick Zolman</title><!-- overridden by site.js -->
+
+  <!-- Favicon (optional — drop a favicon.ico in root) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ─────────────────────────────────────────────────────
+       SIDEBAR
+       Personal info, photo, links — all sourced from
+       js/site.config.js by site.js
+  ──────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+
+    <!-- Profile photo -->
+    <div class="profile-photo-wrap">
+      <img id="profile-photo" src="" alt="Profile photo">
+    </div>
+
+    <!-- Name, title, tagline -->
+    <div class="sidebar-identity">
+      <h1 id="site-name"></h1>
+      <p class="site-title"  id="site-title"></p>
+      <p class="site-tagline" id="site-tagline"></p>
+    </div>
+
+    <!-- CV download button -->
+    <a id="cv-btn" class="btn-cv" href="#" target="_blank" rel="noopener">
+      <!-- document icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+      </svg>
+      Download CV
+    </a>
+
+    <!-- Social / academic links -->
+    <nav class="social-links" id="social-links" aria-label="Social links">
+      <!-- rendered by site.js from SITE_CONFIG.links -->
+    </nav>
+
+    <div class="sidebar-footer">
+      Built with plain HTML/CSS/JS.<br>
+      Hosted on GitHub Pages.
+    </div>
+
+  </aside><!-- /sidebar -->
+
+
+  <!-- ─────────────────────────────────────────────────────
+       MAIN CONTENT
+  ──────────────────────────────────────────────────────── -->
+  <main class="main-content">
+
+    <!-- ── About ──────────────────────────────────────── -->
+    <section id="bio">
+      <h2 class="section-heading">About</h2>
+      <div id="site-bio">
+        <!-- filled by site.js from SITE_CONFIG.bio -->
+      </div>
+    </section>
+
+    <!-- ── News ───────────────────────────────────────── -->
+    <section id="news">
+      <h2 class="section-heading">News</h2>
+      <div id="news-feed">
+        <!-- rendered by site.js from content/news.md -->
+        <p class="empty">Loading…</p>
+      </div>
+    </section>
+
+    <!-- ── Research ───────────────────────────────────── -->
+    <section id="research">
+      <h2 class="section-heading">Research</h2>
+      <div class="projects-grid" id="projects-grid">
+        <!-- rendered by site.js from content/projects/*.md -->
+        <p class="empty">Loading…</p>
+      </div>
+    </section>
+
+  </main><!-- /main-content -->
+
+
+  <!-- ─────────────────────────────────────────────────────
+       FOOTER
+  ──────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    © <span id="footer-year"></span> <span id="footer-name"></span>
+  </footer>
+
+</div><!-- /layout -->
+
+
+<!-- ─────────────────────────────────────────────────────
+     MEDIA MODAL
+     Opens when a project card's image/video is clicked.
+     Closed by clicking outside, clicking ×, or pressing Escape.
+──────────────────────────────────────────────────────── -->
+<div id="media-modal" role="dialog" aria-modal="true" aria-label="Media viewer">
+  <div id="modal-inner"></div>
+  <button id="modal-close" aria-label="Close">×</button>
+</div>
+
+
+<!-- Scripts (load config first, then engine) -->
+<script src="js/site.config.js"></script>
+<script src="js/site.js"></script>
+
+</body>
+</html>
