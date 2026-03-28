@@ -294,6 +294,14 @@ section + section {
 }
 .news-item:last-child { border-bottom: none; }
 
+#news-feed {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+#news-feed::-webkit-scrollbar        { width: 4px; }
+#news-feed::-webkit-scrollbar-track  { background: transparent; }
+#news-feed::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 2px; }
 .news-date {
   text-align: center;
   font-family: var(--font-mono);
@@ -337,7 +345,13 @@ section + section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
+.projects-grid::-webkit-scrollbar        { width: 4px; }
+.projects-grid::-webkit-scrollbar-track  { background: transparent; }
+.projects-grid::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 2px; }
 
 .project-card {
   background: var(--bg-card);
