@@ -88,7 +88,9 @@ function parseNewsMd(raw) {
   for (const section of sections) {
     const lines = section.trim().split("\n");
     const dateLine = lines[0].trim();
-    const dateObj  = new Date(dateLine);
+    // const dateObj  = new Date(dateLine);
+    const [y, m, d] = dateLine.split("-").map(Number);
+    const dateObj = new Date(y, m - 1, d);
     if (isNaN(dateObj.getTime())) continue; // skip non-date headings like "# News"
 
     const text = lines.slice(1).join("\n").trim();
