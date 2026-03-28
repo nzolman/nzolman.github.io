@@ -12,7 +12,7 @@ const SITE_CONFIG = {
   // ── Personal Info ─────────────────────────────────────────
   name:       "Nick Zolman",
   title:      "PhD Student · University of Washington",
-  tagline:    "Dynamical systems & machine learning at the intersection of physics and data.",
+  tagline:    "Dynamical Systems · Control · Machine Learning · Reduced-Order Modeling",
   email:      "",           // e.g. "nzolman@uw.edu" — leave blank to hide
   location:   "Seattle, WA",
 
