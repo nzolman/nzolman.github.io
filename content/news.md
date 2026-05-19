@@ -35,7 +35,7 @@
 
 
 ## 2026-05-15
-🎉 Anuj Krovvidi presented our on-going work on using SINDy for Direct Policy Optimization (DPO-SINDy) at his first UW Undergraduate Research Symposium. 
+🎉 Anuj Krovvidi presented our ongoing work on using SINDy for Direct Policy Optimization (DPO-SINDy) at his first UW Undergraduate Research Symposium! 
 
 ## 2026-03-05
 ✈️ Presented our SINDy-RL work at [ML4Fluids 2026](https://ml4fluids2026.github.io/) in Amsterdam!
