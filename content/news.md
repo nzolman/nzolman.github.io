@@ -34,7 +34,7 @@
   ============================================================ -->
 
 ## 2026-06-04
-📄 Our preprint "Uncovering Extreme Event Mechanisms for Prediction and Control with Sensitivity-Balanced Projections" is now available on arXiv! Check it out [here]((https://arxiv.org/abs/2606.05618))!
+📄 Our preprint "Uncovering Extreme Event Mechanisms for Prediction and Control with Sensitivity-Balanced Projections" is now available on arXiv! Check it out [here](https://arxiv.org/abs/2606.05618)!
 
 ## 2026-05-15
 🎉 Anuj Krovvidi presented our ongoing work on using SINDy for Direct Policy Optimization (DPO-SINDy) at his first UW Undergraduate Research Symposium! 
