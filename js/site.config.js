@@ -11,7 +11,7 @@ const SITE_CONFIG = {
 
   // ── Personal Info ─────────────────────────────────────────
   name:       "Nick Zolman",
-  title:      "PhD Student · University of Washington",
+  title:      "PhD Candidate · University of Washington",
   tagline:    "Dynamical Systems · Control · Machine Learning · Reduced-Order Modeling",
   email:      "",           // e.g. "nzolman@uw.edu" — leave blank to hide
   location:   "Seattle, WA",
@@ -27,11 +27,11 @@ const SITE_CONFIG = {
 
   // ── Bio (HTML allowed) ────────────────────────────────────
   bio: `
-    I am a PhD student at the University of Washington advised by
+    I am a PhD candidate at the University of Washington advised by
     <a href="https://www.eigensteve.com/">Steve Brunton</a>, studying
-    the intersection of dynamical systems and machine learning.
+    the intersection of dynamical systems and machine learning (expected graduation: May 2027).
     My research focuses on incorporating known physical structure into
-    machine learning and optimization — especially in the low-data regime.
+    machine learning and optimization—especially in the low-data regime.
     <br><br>
     In a past life I studied pure mathematics and theoretical physics,
     and those threads still run through my work. Outside of academics,
