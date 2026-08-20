@@ -33,11 +33,18 @@
     🎉
   ============================================================ -->
 
+
+## 2026-08-19
+📚 Our paper, ["The HydroGym reinforcement learning platform for fluid dynamics"](https://www.nature.com/articles/s41586-026-10917-6), was published in Nature! Huge thanks to [Christian Lagemann](https://scholar.google.com/citations?user=6BgfQAgAAAAJ&hl=en) for leading this effort and building out this platform!!
+
+## 2026-07-20
+✈️ Presented [our recent work](https://arxiv.org/abs/2606.05618) on extreme events at our [WCCM-ECCOMAS minisymposium](https://wccm-eccomas2026.org/event/area/83b993e2-ab83-11f0-bce5-000c29ddfc0c)in Munich! A big thanks to all of our amazing presenters to make this a success!
+
 ## 2026-06-04
 📄 Our preprint "Uncovering Extreme Event Mechanisms for Prediction and Control with Sensitivity-Balanced Projections" is now available on arXiv! Check it out [here](https://arxiv.org/abs/2606.05618)!
 
 ## 2026-05-15
-🎉 Anuj Krovvidi presented our ongoing work on using SINDy for Direct Policy Optimization (DPO-SINDy) at his first UW Undergraduate Research Symposium! 
+🎉 Anuj Krovvidi presented our ongoing work on using SINDy for Differentiable Predictive Control (DPC-SINDy) at his first UW Undergraduate Research Symposium!
 
 ## 2026-03-05
 ✈️ Presented our SINDy-RL work at [ML4Fluids 2026](https://ml4fluids2026.github.io/) in Amsterdam!
