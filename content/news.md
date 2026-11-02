@@ -33,8 +33,11 @@
     🎉
   ============================================================ -->
 
+## 2026-11-22
+✈️ We're going to APS DFD 2026! I will be presenting our work on [Extreme Events](https://dfd-meeting.aps.org/dfd/2026/events/E23/7) Sunday evening, and Anuj will be presenting our work on [differentiable predictive control](https://dfd-meeting.aps.org/dfd/2026/events/M23/8) on Tuesday morning. Hope to see you there!
+
 ## 2026-10-06
-✈️ Participating in MIT's [Physical Mathematics Seminar](https://math.mit.edu/pms/) as an invited speaker. Thank you Jörn Dunkel for the invitation!
+✈️ Participated in MIT's [Physical Mathematics Seminar](https://math.mit.edu/pms/) as an invited speaker. Thank you Jörn Dunkel for the invitation!
 
 ## 2026-09-01
 ✈️ Participated in Imperial College London's [Aerodynamics & Control Seminars](https://cassyni.com/s/ic-aerodynamics-and-control) as an invited speaker. Check out the [recording here](https://cassyni.com/events/YC6yAVy51awwhhDjgfngx5)! Thank you Urban Fasel for the wonderful visit!
