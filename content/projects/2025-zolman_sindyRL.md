@@ -1,4 +1,4 @@
-# Structure-Preserving Autoencoders for Hamiltonian Systems
+# Interpretable and Efficient Reinforcement Learning
 
 <!-- ============================================================
   HOW TO CONFIGURE A PROJECT

@@ -1,4 +1,4 @@
-# Structure-Preserving Autoencoders for Hamiltonian Systems
+# A unified framework for symmetry
 
 <!-- ============================================================
   HOW TO CONFIGURE A PROJECT
