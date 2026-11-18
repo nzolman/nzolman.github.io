@@ -29,6 +29,7 @@ tags:   SINDy, DRL, SINDy-RL, control, sparse, dictionary learning
 image:  assets/projects/pinball_350.gif
 code: https://github.com/nzolman/sindy-rl
 paper:  https://www.nature.com/articles/s41467-025-65738-4
+youtube: https://www.youtube.com/watch?v=7Q8oNNsZGcA | Video Overview (2024-preprint version)
 ---
 
 We introduce SINDy-RL, a unifying framework for combining SINDy and DRL to create efficient, interpretable, and trustworthy representations of the dynamics model, reward function, and control policy. We demonstrate the effectiveness of our approaches on benchmark control environments and flow control problems, including gust mitigation on a 3D NACA 0012 airfoil at Re = 1000. SINDy-RL achieves comparable performance to modern DRL algorithms using significantly fewer interactions in the environment and results in an interpretable control policy orders of magnitude smaller than a DRL policy.

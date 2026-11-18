@@ -29,6 +29,7 @@ tags:   Extreme Events, CoBRAS, Reduced-Order Modeling, Balanced Truncation
 image:  assets/projects/extreme_events_f1.png
 code: https://github.com/nzolman/cobras-extreme
 paper: https://arxiv.org/abs/2606.05618
+youtube: https://www.youtube.com/watch?v=FC7wv7Lwme0 | Video Overview (25min)
 ---
 
 We identify linear oblique projections (via CoBRAS) that best capture the sensitivity of a quantity of interest and reconstruct the original state. To accommodate spatially localized events, we also introduce a new variant of CoBRAS to obtain local sensitivity-balanced projections. We demonstrate the utility of this approach to characterize extreme events across a diverse set of challenging systems, including turbulent bursts of energy dissipation in the 2D Kolmogorov Flow, spontaneous synchronization in networks of coupled FitzHugh-Nagumo oscillators, and the localized formation of ocean rogue waves from a modified nonlinear Schrödinger equation. For each example, we show that our simple forecast models accurately predict extreme events and that the underlying mechanisms may be used to design control laws to prevent these events. Finally, we demonstrate that by learning a neural network surrogate model of the dynamics directly from data, we may extend this approach to experimental systems and systems that are not natively written in an automatically differentiable programming language.
