@@ -458,7 +458,49 @@ section + section {
 .card-description p:last-child { margin-bottom: 0; }
 .card-description ul { margin: 0.5em 0; }
 .card-description strong { color: var(--text); }
-
+/* YouTube thumbnails in project cards. Change 200px to resize them. */
+.card-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.9rem;
+}
+.video-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.video-tile:hover { color: var(--accent); text-decoration: none; }
+.video-tile-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.video-tile-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* trims the black bars on YouTube thumbnails */
+  display: block;
+}
+.video-tile-thumb::after {   /* round play button in the middle */
+  content: "\25B6\FE0E";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 44px;
+  height: 44px;
+  padding-left: 3px;
+  border-radius: 50%;
+  background: rgba(20, 18, 16, 0.72);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-tile:hover .video-tile-thumb::after { background: var(--accent); }
 .card-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.25rem; }
 
 /* Buttons */

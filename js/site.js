@@ -38,7 +38,7 @@ function mdToHtml(md) {
 // Extracts the YAML-like metadata block between --- markers,
 // plus the body text below it.
 function parseProjectMd(raw) {
-  const meta   = {};
+  const meta   = { youtube: [] };
   let   body   = raw;
 
   // Strip the leading H1 title line (we use meta.title instead)
@@ -53,7 +53,11 @@ function parseProjectMd(raw) {
       const m = line.match(/^(\w+):\s*(.*)$/);
       if (m) {
         let val = m[2].trim().replace(/^["']|["']$/g, "");
-        meta[m[1]] = val;
+        if (m[1] === "youtube") {
+          meta.youtube.push(val);   // youtube: can repeat, so collect every line
+        } else {
+          meta[m[1]] = val;
+        }
       }
     });
     body = body.slice(fenceMatch[0].length).trim();
@@ -190,6 +194,22 @@ function renderProjectCard(p, index) {
     </div>`;
   }
 
+  // YouTube thumbnails — one per "youtube:" line in the project file.
+  // Line format:  youtube: <YouTube URL> | <optional caption>
+  // The thumbnail image is fetched from YouTube using the video's ID.
+  const videosHtml = p.youtube.map(line => {
+    const [url, caption = ""] = line.split("|").map(s => s.trim());
+    const id = url.match(/(?:v=|youtu\.be\/|shorts\/|live\/)([\w-]{11})/)?.[1];
+    if (!id) return "";
+    return `
+      <a class="video-tile" href="${url}" target="_blank" rel="noopener">
+        <span class="video-tile-thumb">
+          <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${caption || "YouTube video"}" loading="lazy">
+        </span>
+        ${caption}
+      </a>`;
+  }).join("");
+
   // Action buttons
   const buttons = [];
   if (p.paper) buttons.push(`<a class="btn btn-ghost" href="${p.paper}" target="_blank" rel="noopener">${getIcon("paper")} Paper</a>`);
@@ -203,6 +223,7 @@ function renderProjectCard(p, index) {
         <div class="card-tags">${tags}</div>
         <h3 class="card-title">${p.title}</h3>
         <div class="card-description">${bodyHtml}</div>
+        ${videosHtml ? `<div class="card-videos">${videosHtml}</div>` : ""}
         ${buttons.length ? `<div class="card-actions">${buttons.join("")}</div>` : ""}
       </div>
     </article>`;
