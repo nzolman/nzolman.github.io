@@ -36,6 +36,13 @@
 ## 2026-11-22
 ✈️ We're going to APS DFD 2026! I will be presenting our work on [extreme events](https://dfd-meeting.aps.org/dfd/2026/events/E23/7) Sunday evening, and Anuj will be presenting our work on [differentiable predictive control](https://dfd-meeting.aps.org/dfd/2026/events/M23/8) on Tuesday morning. Hope to see you there!
 
+## 2026-11-18
+🎥 A new video describing our extreme event work is now up on Steve Brunton's YouTube channel! Click the thumbnail below to check it out! 
+
+<a href="https://www.youtube.com/watch?v=FC7wv7Lwme0">
+  <img src="https://img.youtube.com/vi/FC7wv7Lwme0/maxresdefault.jpg" alt="CoBRAS video abstract" width="200">
+</a>
+
 ## 2026-10-06
 ✈️ Participated in MIT's [Physical Mathematics Seminar](https://math.mit.edu/pms/) as an invited speaker. Thank you Jörn Dunkel for the invitation!
 
